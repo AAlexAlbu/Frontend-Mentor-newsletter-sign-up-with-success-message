@@ -1,3 +1,17 @@
+document.addEventListener("DOMContentLoaded", function () {
+    var emailInput = document.querySelector(".email-form input");
+    emailInput.addEventListener("click", function () {
+        clearErrorStyles(emailInput);
+    });
+
+});
+
+function clearErrorStyles(emailInput) {
+    var errorLabel = document.querySelector("#error-label");
+    errorLabel.style.display = "none";
+    emailInput.classList.remove("error");
+    emailInput.value = "";
+}
 
 function validateForm() {
     var emailInput = document.querySelector(".email-form input");
@@ -23,6 +37,7 @@ function validateForm() {
     // Only open the email client if the form is valid
     if (emailValue !== "" && emailInput.classList.contains("error") === false) {
         submitForm();
+        emailInput.value = "";
     }
 }
 
