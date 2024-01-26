@@ -6,13 +6,13 @@ function validateForm() {
     
 
     if (emailValue === "") { // check if the email is empty
-        errorLabel.classList.add("display");
+        errorLabel.style.display = "block";
         emailInput.classList.add("error");
     } else {
         // Check if the email is correctly formatted using a simple regular expression
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(emailValue)) {
-            errorLabel.classList.add("display");
+            errorLabel.style.display = "block";
             emailInput.classList.add("error");
         } else {
             errorLabel.classList.remove("display");
